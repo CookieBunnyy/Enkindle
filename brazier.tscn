@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dxim0oni7y3xd"]
+
+[ext_resource type="Script" uid="uid://q4bmc8n1mi50" path="res://brazier.gd" id="1_d1r1w"]
+[ext_resource type="Texture2D" uid="uid://bon3heb4oiwkp" path="res://lightmask.png" id="2_1k8ij"]
+[ext_resource type="Texture2D" uid="uid://bb7ot1her277f" path="res://Enkindle/new_brazier.png" id="3_xwj88"]
+[ext_resource type="Texture2D" uid="uid://bb225yocsvy8s" path="res://Enkindle/new_brazier_lit-Sheet.png" id="4_bextj"]
+[ext_resource type="FontFile" uid="uid://tcbo7gylupm1" path="res://Enkindle/Dead Font Walking.otf" id="5_bextj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1r1w"]
+size = Vector2(11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ucaj"]
+atlas = ExtResource("4_bextj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7cs3"]
+atlas = ExtResource("4_bextj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqmdy"]
+atlas = ExtResource("4_bextj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjtnw"]
+atlas = ExtResource("4_bextj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ugi"]
+atlas = ExtResource("4_bextj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r0ve"]
+atlas = ExtResource("4_bextj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6ugi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ucaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7cs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqmdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjtnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6ugi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r0ve")
+}],
+"loop": true,
+"name": &"brazier_lit",
+"speed": 6.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xwj88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bextj"]
+size = Vector2(11, 21)
+
+[node name="Brazier" type="Area2D" unique_id=543496582 groups=["brazier"]]
+collision_mask = 2
+script = ExtResource("1_d1r1w")
+required_embers = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=129819730]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_d1r1w")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=302264770]
+modulate = Color(1, 1, 1, 0.6392157)
+show_behind_parent = true
+texture_filter = 1
+scale = Vector2(1.1087645, 0.97491455)
+enabled = false
+color = Color(0.81666887, 0.80786526, 0.33687133, 0.68235296)
+energy = 1.3
+texture = ExtResource("2_1k8ij")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=596132794]
+modulate = Color(1, 0.75686276, 0.16078432, 1)
+scale = Vector2(1.7578125, 1.5742186)
+texture = ExtResource("3_xwj88")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=179000722]
+visible = false
+visibility_layer = 2
+scale = Vector2(1.754, 1.734375)
+sprite_frames = SubResource("SpriteFrames_f6ugi")
+animation = &"brazier_lit"
+frame_progress = 0.96228004
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2101996765]
+physics_material_override = SubResource("PhysicsMaterial_xwj88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=221962041]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_bextj")
+
+[node name="EmberLabel" type="Label" parent="." unique_id=407170493]
+texture_filter = 1
+offset_left = -17.0
+offset_top = -22.0
+offset_right = 98.0
+offset_bottom = 6.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("5_bextj")
+theme_override_font_sizes/font_size = 20
+text = "Ember: 2 / 3"
+horizontal_alignment = 1

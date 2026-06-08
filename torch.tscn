@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c74y8h7m4lwfx"]
+
+[ext_resource type="Script" uid="uid://dsj64wag4tnl6" path="res://torch.gd" id="1_pa17o"]
+[ext_resource type="Texture2D" uid="uid://dcuu2s2brxpq4" path="res://Enkindle/ember.png" id="2_s1444"]
+[ext_resource type="Texture2D" uid="uid://bon3heb4oiwkp" path="res://lightmask.png" id="3_w3qnr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pa17o"]
+radius = 7.071068
+
+[node name="Torch" type="Area2D" unique_id=1755581288 groups=["ember"]]
+script = ExtResource("1_pa17o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=879963045]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, -4)
+scale = Vector2(0.69140816, 0.71093786)
+texture = ExtResource("2_s1444")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173592793]
+visibility_layer = 4
+shape = SubResource("CircleShape2D_pa17o")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1570396940]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(0.115234375, 0.11523438)
+color = Color(1, 1, 0.35686275, 0.654902)
+energy = 0.7
+texture = ExtResource("3_w3qnr")

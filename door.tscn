@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bki6vsc4382tf"]
+
+[ext_resource type="Script" uid="uid://cq6wvocaoulcx" path="res://door.gd" id="1_0phs7"]
+[ext_resource type="Texture2D" uid="uid://5ivxtbjqpkue" path="res://Enkindle/Tiled_files/close_door.png" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://ch12e6ulw4d3r" path="res://Enkindle/Tiled_files/open_door.png" id="2_0phs7"]
+[ext_resource type="Script" uid="uid://bvs72l0l0e7ps" path="res://exit_area.gd" id="2_50cdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0phs7"]
+size = Vector2(20, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+
+[node name="Door" type="Node2D" unique_id=531182679]
+z_index = 1
+script = ExtResource("1_0phs7")
+
+[node name="DoorBlocker" type="StaticBody2D" parent="." unique_id=1505482500]
+position = Vector2(0.5, 4.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBlocker" unique_id=1285404969]
+position = Vector2(0, -1.25)
+shape = SubResource("RectangleShape2D_0phs7")
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=411789063]
+script = ExtResource("2_50cdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=1307047830]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_50cdl")
+
+[node name="CloseDoor" type="Sprite2D" parent="." unique_id=1429606287]
+texture = ExtResource("1_v6xrn")
+
+[node name="OpenDoor" type="Sprite2D" parent="." unique_id=199962762]
+visible = false
+texture = ExtResource("2_0phs7")

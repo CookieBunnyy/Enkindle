@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://w51fdi0nu7e0"]
+
+[ext_resource type="Texture2D" uid="uid://bon3heb4oiwkp" path="res://lightmask.png" id="1_we4ua"]
+[ext_resource type="Texture2D" uid="uid://dt4scsv065qlk" path="res://Enkindle/Tiled_files/fire_animation.png" id="2_5qqhr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njlvs"]
+atlas = ExtResource("2_5qqhr")
+region = Rect2(84, 48, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esukd"]
+atlas = ExtResource("2_5qqhr")
+region = Rect2(84, 96, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flval"]
+atlas = ExtResource("2_5qqhr")
+region = Rect2(84, 144, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng3tf"]
+atlas = ExtResource("2_5qqhr")
+region = Rect2(84, 192, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbk6j"]
+atlas = ExtResource("2_5qqhr")
+region = Rect2(84, 240, 42, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd7xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njlvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esukd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flval")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng3tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbk6j")
+}],
+"loop": true,
+"name": &"lights",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we4ua"]
+radius = 13.038404
+
+[node name="Light" type="StaticBody2D" unique_id=1598290141]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2012971456]
+position = Vector2(5.9604645e-08, 1)
+scale = Vector2(0.734375, 0.71875)
+color = Color(0.7505669, 0.7505669, 0.3373405, 1)
+texture = ExtResource("1_we4ua")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=701598869]
+sprite_frames = SubResource("SpriteFrames_xd7xi")
+animation = &"lights"
+frame_progress = 0.8676151
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1689139841]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_we4ua")

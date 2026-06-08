@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://q1inkwaghh1n"]
+
+[ext_resource type="Script" uid="uid://du3wg7dq5auea" path="res://barrel.gd" id="1_a12vh"]
+[ext_resource type="Texture2D" uid="uid://02pugaha4e4n" path="res://Enkindle/barrel.png" id="2_rdxsi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a12vh"]
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ygdis"]
+radius = 15.0
+height = 34.0
+
+[node name="Barrel" type="Area2D" unique_id=1825428916 groups=["barrel"]]
+script = ExtResource("1_a12vh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=52166886]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1192422265]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_a12vh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=956192997]
+scale = Vector2(0.8125, 0.828125)
+texture = ExtResource("2_rdxsi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=797799312 groups=["barrel"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=313890192]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ygdis")

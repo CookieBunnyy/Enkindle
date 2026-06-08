@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c55fwv5kdupmd"]
+
+[ext_resource type="Script" uid="uid://cscfp4h2yh0b" path="res://escape_zone.gd" id="1_pkrpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjhfg"]
+size = Vector2(76, 12)
+
+[node name="EscapeZone" type="Area2D" unique_id=1067278650 groups=["escape_zone"]]
+script = ExtResource("1_pkrpp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2025834078]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_bjhfg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bhgedy73t6bn6"]
+
+[ext_resource type="Texture2D" uid="uid://duj2xlv6uomir" path="res://Enkindle/background.png" id="1_nfnlp"]
+[ext_resource type="Script" uid="uid://c7n820svovqk0" path="res://loadingscreen.gd" id="1_pp2n5"]
+[ext_resource type="FontFile" uid="uid://tcbo7gylupm1" path="res://Enkindle/Dead Font Walking.otf" id="2_tl1rq"]
+[ext_resource type="Texture2D" uid="uid://bilf64uy6orfl" path="res://Enkindle/theshade_idle_down-Sheet.png" id="4_78s05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mabrg"]
+atlas = ExtResource("4_78s05")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ory"]
+atlas = ExtResource("4_78s05")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uifsq"]
+atlas = ExtResource("4_78s05")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qepu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mabrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ory")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uifsq")
+}],
+"loop": true,
+"name": &"Shade",
+"speed": 6.0
+}]
+
+[node name="LoadingScreen" type="Control" unique_id=233205587]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pp2n5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1387663890]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1024.0
+texture = ExtResource("1_nfnlp")
+
+[node name="LoadingLabel" type="Label" parent="." unique_id=915368446]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 863.0
+offset_right = 1083.0
+offset_bottom = 937.0
+theme_override_fonts/font = ExtResource("2_tl1rq")
+theme_override_font_sizes/font_size = 43
+text = "Loading"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1959037649]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 926.0
+offset_right = 982.0
+offset_bottom = 963.0
+theme_override_fonts/font = ExtResource("2_tl1rq")
+theme_override_font_sizes/font_size = 30
+
+[node name="TipLabel" type="Label" parent="." unique_id=161549159]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 501.0
+offset_right = 1263.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("2_tl1rq")
+theme_override_font_sizes/font_size = 34
+text = "Hide in bushes or barrels to evade danger."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="." unique_id=1817218443]
+position = Vector2(154, 886)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_1qepu")
+animation = &"Shade"
+frame_progress = 0.80100155

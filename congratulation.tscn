@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://d1am4kxp48sjk"]
+
+[ext_resource type="Script" uid="uid://b78vxv5sckl4i" path="res://congratulation.gd" id="1_7x8yc"]
+[ext_resource type="Texture2D" uid="uid://duj2xlv6uomir" path="res://Enkindle/background.png" id="1_vrt16"]
+[ext_resource type="FontFile" uid="uid://tcbo7gylupm1" path="res://Enkindle/Dead Font Walking.otf" id="2_7x8yc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8xbc"]
+content_margin_left = 23.0
+content_margin_right = 23.0
+bg_color = Color(0.7176471, 0.5372549, 0.14509805, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13333334, 0.09019608, 0.0627451, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1414"]
+bg_color = Color(0.8117647, 0.60784316, 0.1764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Congratulation" type="Control" unique_id=1702667955]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7x8yc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=174252113]
+layout_mode = 0
+offset_left = -17.0
+offset_right = 1930.0
+offset_bottom = 1024.0
+texture = ExtResource("1_vrt16")
+
+[node name="Label" type="Label" parent="." unique_id=1319739430]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 403.0
+offset_right = 1198.0
+offset_bottom = 596.0
+theme_override_fonts/font = ExtResource("2_7x8yc")
+theme_override_font_sizes/font_size = 44
+text = "CONGRATULATIONS!
+
+You rekindled every flame
+and escaped the darkness."
+horizontal_alignment = 1
+
+[node name="BackToMenuButton" type="Button" parent="." unique_id=1257948829]
+texture_filter = 1
+layout_mode = 0
+offset_left = 786.0
+offset_top = 684.0
+offset_right = 1163.0
+offset_bottom = 738.0
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7x8yc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8xbc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b1414")
+text = "Back to Main Menu"

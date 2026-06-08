@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bh8asuhi5pd34"]
+
+[ext_resource type="Texture2D" uid="uid://chm007b4g0csv" path="res://Enkindle/Vegetation/bush2.png" id="1_8cy4n"]
+[ext_resource type="Script" uid="uid://du3wg7dq5auea" path="res://barrel.gd" id="1_28u5p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28u5p"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilexf"]
+radius = 24.0
+
+[node name="Bush" type="Area2D" unique_id=851438041 groups=["barrel"]]
+script = ExtResource("1_28u5p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1831202494]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1576140119]
+shape = SubResource("CircleShape2D_28u5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1012163844]
+texture = ExtResource("1_8cy4n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=861954673 groups=["barrel"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1388930803]
+shape = SubResource("CircleShape2D_ilexf")

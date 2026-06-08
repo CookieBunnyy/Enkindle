@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://bg5mvaihn4erq"]
+
+[ext_resource type="Texture2D" uid="uid://duj2xlv6uomir" path="res://Enkindle/background.png" id="1_ig5kc"]
+[ext_resource type="Script" uid="uid://c5grsovf0m0r0" path="res://title_screen.gd" id="1_tpml5"]
+[ext_resource type="Script" uid="uid://d0m64aiflv3pd" path="res://background.gd" id="2_05l2w"]
+[ext_resource type="FontFile" uid="uid://tcbo7gylupm1" path="res://Enkindle/Dead Font Walking.otf" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://ckkltqilf40hg" path="res://Enkindle/title_logo.png" id="3_hafda"]
+[ext_resource type="AudioStream" uid="uid://df3hwew5fvqne" path="res://Enkindle/titlescreenmusic.mp3" id="5_tpml5"]
+[ext_resource type="Texture2D" uid="uid://dxqh82uf24gfn" path="res://Enkindle/facebook.png" id="7_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://xc1s2xdcm6g2" path="res://Enkindle/discord.png" id="8_rhgbh"]
+[ext_resource type="Texture2D" uid="uid://4l2pmm2kght4" path="res://Enkindle/steam.png" id="9_skmiq"]
+[ext_resource type="Texture2D" uid="uid://clil3g1lgfhl0" path="res://Enkindle/github.png" id="10_lf08s"]
+[ext_resource type="Texture2D" uid="uid://clm2d01a8lmox" path="res://Enkindle/Screenshot 2026-06-07 234612.png" id="11_rhgbh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05l2w"]
+content_margin_left = 23.0
+content_margin_right = 23.0
+bg_color = Color(0.7176471, 0.5372549, 0.14509805, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13333334, 0.09019608, 0.0627451, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak2if"]
+bg_color = Color(0.80993056, 0.609497, 0.17748424, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig5kc"]
+bg_color = Color(0.8117647, 0.60784316, 0.1764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hafda"]
+bg_color = Color(0.8117647, 0.60784316, 0.1764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="TitleScreen" type="Control" unique_id=1269687239]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tpml5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1062740724]
+layout_mode = 0
+offset_left = -135.0
+offset_top = -99.0
+offset_right = 2103.0
+offset_bottom = 1149.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=641098069]
+texture_filter = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 1938.0
+offset_bottom = 1024.0
+texture = ExtResource("1_ig5kc")
+stretch_mode = 6
+script = ExtResource("2_05l2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=279935722]
+modulate = Color(0.84947944, 0.84947944, 0.84947944, 1)
+texture_filter = 1
+position = Vector2(992.7406, 378.24063)
+scale = Vector2(0.9568863, 0.96453613)
+texture = ExtResource("3_hafda")
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=2065346994]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1893.0
+offset_bottom = 981.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VersionLabel" type="Label" parent="." unique_id=41745885]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 963.0
+offset_right = 140.0
+offset_bottom = 986.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Version: 0725.03 Beta Version"
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=182355876]
+stream = ExtResource("5_tpml5")
+volume_db = -12.111
+pitch_scale = 0.6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=403759362]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 873.0
+offset_top = 581.0
+offset_right = 1073.0
+offset_bottom = 751.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1507006712]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ak2if")
+text = "Start"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer" unique_id=225682441]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ig5kc")
+text = "Option"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1812587481]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "Quit"
+
+[node name="LevelSelectPanel" type="VBoxContainer" parent="." unique_id=1680265450]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 873.0
+offset_top = 569.0
+offset_right = 1073.0
+offset_bottom = 830.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Level1Button" type="Button" parent="LevelSelectPanel" unique_id=599872398]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ak2if")
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="LevelSelectPanel" unique_id=537986762]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ig5kc")
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="LevelSelectPanel" unique_id=1210059554]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "Level 3"
+
+[node name="BackButton" type="Button" parent="LevelSelectPanel" unique_id=1077165758]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "Back"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2114646636]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = 802.0
+offset_right = 187.0
+offset_bottom = 972.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Facebook" type="Sprite2D" parent="VBoxContainer2" unique_id=555442991]
+position = Vector2(33, 85)
+texture = ExtResource("7_xfn3p")
+
+[node name="Discord" type="Sprite2D" parent="VBoxContainer2" unique_id=1498781254]
+position = Vector2(34, 25)
+texture = ExtResource("8_rhgbh")
+
+[node name="Steam" type="Sprite2D" parent="VBoxContainer2" unique_id=1781557091]
+position = Vector2(35, -95)
+texture = ExtResource("9_skmiq")
+
+[node name="Github" type="Sprite2D" parent="VBoxContainer2" unique_id=1413698695]
+position = Vector2(35, -35)
+texture = ExtResource("10_lf08s")
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=705647390]
+position = Vector2(1809.0001, 900.00006)
+scale = Vector2(0.37, 0.3329114)
+texture = ExtResource("11_rhgbh")
+
+[node name="ResetProgressButton" type="Button" parent="." unique_id=497113427]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 62.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.7176471, 0.5372549, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.8910754, 0.6780691, 0.23156783, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+text = "Reset"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="LevelSelectPanel/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="LevelSelectPanel/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="LevelSelectPanel/Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="LevelSelectPanel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ResetProgressButton" to="." method="_on_reset_progress_button_pressed"]
